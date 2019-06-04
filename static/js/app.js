@@ -5,19 +5,27 @@ var tableData = data;
 //   return rows.map(function(row) {
 //     return row[index];
 //   });
-
+tableData.forEach((Report) => {
+   var table = d3.select("#ufo-table");
+   var tbody = table.select("tbody");
+   var row = tbody.append("tr");
+   Object.entries(Report).forEach(([key, value]) => {
+     var cell = row.append("td");
+     cell.text(value);
+   });
+ });
 
  //function getData() {
 
  // (function(tableData) {
-    var datetime = tableData.datetime;
-    var city = tableData.city;
-    var state = tableData.state;
-    var country = tableData.country;
-    var shape = tableData.shape;
-    var durationMinutes = tableData.durationMinutes;
-    var comments = tableData.comments;
-    buildTable(datetime, city, state, country, shape, durationMinutes,comments);
+   //  var datetime = tableData.datetime;
+   //  var city = tableData.city;
+   //  var state = tableData.state;
+   //  var country = tableData.country;
+   //  var shape = tableData.shape;
+   //  var durationMinutes = tableData.durationMinutes;
+   //  var comments = tableData.comments;
+//    buildTable(datetime, city, state, country, shape, durationMinutes,comments);
  // });
 //}
 
